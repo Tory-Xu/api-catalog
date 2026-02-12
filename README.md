@@ -37,7 +37,7 @@ git clone https://github.com/Tory-Xu/api-catalog.git ~/.claude/api-catalog-repo
 ln -s ~/.claude/api-catalog-repo/api-catalog ~/.claude/skills/api-catalog
 
 # 安装 commands（可选，提供 slash 命令快捷方式）
-cp ~/.claude/api-catalog-repo/commands/*.md ~/.claude/commands/
+cp -r ~/.claude/api-catalog-repo/commands/catalog ~/.claude/commands/
 ```
 
 ## 使用方法
@@ -46,9 +46,9 @@ cp ~/.claude/api-catalog-repo/commands/*.md ~/.claude/commands/
 
 | 命令 | 说明 | 示例 |
 |------|------|------|
-| `/catalog-add` | 记录函数到索引 | `/catalog-add getServerTime` |
-| `/catalog-scan` | 扫描项目生成索引 | `/catalog-scan` |
-| `/catalog-find` | 按需查找函数 | `/catalog-find 时间` |
+| `/catalog:add` | 记录函数到索引 | `/catalog:add getServerTime` |
+| `/catalog:scan` | 扫描项目生成索引 | `/catalog:scan` |
+| `/catalog:find` | 按需查找函数 | `/catalog:find 时间` |
 
 ### 自然语言触发
 
