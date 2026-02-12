@@ -20,7 +20,7 @@ Vibe coding 时经常遇到：
 ### 方式一：npx skills（推荐）
 
 ```bash
-# 全局安装
+# 全局安装（skill + commands 一起装）
 npx skills add Tory-Xu/api-catalog@api-catalog -g -y
 
 # 或安装到当前项目
@@ -30,38 +30,33 @@ npx skills add Tory-Xu/api-catalog@api-catalog -y
 ### 方式二：手动安装
 
 ```bash
-# 全局安装
-git clone https://github.com/Tory-Xu/api-catalog.git ~/.claude/skills/api-catalog-repo
-ln -s ~/.claude/skills/api-catalog-repo/api-catalog ~/.claude/skills/api-catalog
+# 克隆仓库
+git clone https://github.com/Tory-Xu/api-catalog.git ~/.claude/api-catalog-repo
 
-# 或安装到当前项目
-git clone https://github.com/Tory-Xu/api-catalog.git .claude/skills/api-catalog-repo
-ln -s .claude/skills/api-catalog-repo/api-catalog .claude/skills/api-catalog
+# 安装 skill
+ln -s ~/.claude/api-catalog-repo/api-catalog ~/.claude/skills/api-catalog
+
+# 安装 commands（可选，提供 slash 命令快捷方式）
+cp ~/.claude/api-catalog-repo/commands/*.md ~/.claude/commands/
 ```
 
 ## 使用方法
 
-### 手动记录函数
+### Slash Commands
 
-在编码过程中随时告诉 AI：
+| 命令 | 说明 | 示例 |
+|------|------|------|
+| `/catalog-add` | 记录函数到索引 | `/catalog-add getServerTime` |
+| `/catalog-scan` | 扫描项目生成索引 | `/catalog-scan` |
+| `/catalog-find` | 按需查找函数 | `/catalog-find 时间` |
 
-```
-记录这个函数
-记下这个 API
-catalog this function
-```
+### 自然语言触发
 
-AI 会读取函数源码，自动归类，写入索引。
+也可以直接用自然语言：
 
-### 自动扫描项目
-
-```
-扫描项目函数
-scan project utilities
-索引项目工具函数
-```
-
-AI 会扫描 `utils/`、`services/`、`lib/` 等目录，自动识别和分类工具函数。
+- **记录函数**："记录这个函数"、"记下这个 API"、"catalog this function"
+- **扫描项目**："扫描项目函数"、"scan project utilities"、"索引项目工具函数"
+- **查找函数**："查找项目工具函数"、"有没有现成的工具函数"
 
 ### 编码时自动查阅
 
