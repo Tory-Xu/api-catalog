@@ -21,21 +21,21 @@ Vibe coding 时经常遇到：
 
 ```bash
 # 全局安装
-npx skills add xuxuxu/api-catalog@api-catalog -g -y
+npx skills add Tory-Xu/api-catalog@api-catalog -g -y
 
 # 或安装到当前项目
-npx skills add xuxuxu/api-catalog@api-catalog -y
+npx skills add Tory-Xu/api-catalog@api-catalog -y
 ```
 
 ### 方式二：手动安装
 
 ```bash
 # 全局安装
-git clone https://github.com/xuxuxu/api-catalog.git ~/.claude/skills/api-catalog-repo
+git clone https://github.com/Tory-Xu/api-catalog.git ~/.claude/skills/api-catalog-repo
 ln -s ~/.claude/skills/api-catalog-repo/api-catalog ~/.claude/skills/api-catalog
 
 # 或安装到当前项目
-git clone https://github.com/xuxuxu/api-catalog.git .claude/skills/api-catalog-repo
+git clone https://github.com/Tory-Xu/api-catalog.git .claude/skills/api-catalog-repo
 ln -s .claude/skills/api-catalog-repo/api-catalog .claude/skills/api-catalog
 ```
 
